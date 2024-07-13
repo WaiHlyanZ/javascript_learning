@@ -13,4 +13,6 @@ function isPalindorme() {
     } else {
         alert("Not the Palindorme.");
     }
+
+    input.value = ""
 }
