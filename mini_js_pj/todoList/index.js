@@ -6,6 +6,10 @@ add items
 remove items
 */
 
+let items = [];
+
+const itemDiv = document.getElementById("items");
+
 function saveItems() {
 
 }
