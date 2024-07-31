@@ -1,1 +1,0 @@
-{"cells":[{"kind":2,"language":"javascript","value":"function add(x, y) {\r\n    console.log(x + y);\r\n}\r\n\r\nadd(3, 4)","index":0}]}

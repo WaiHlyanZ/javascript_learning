@@ -13,7 +13,7 @@ const itemsDiv = document.getElementById("items");
 
 function renderItems() {
     itemsDiv.innerHTML = null;
-
+    // 
     for (const [idx, item] of Object.entries(items)) {
         const container = document.createElement("div");
         container.style.marginBottom = "10px";
