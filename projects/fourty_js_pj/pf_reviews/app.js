@@ -43,6 +43,55 @@ const nextBtn = document.querySelector(".next-btn");
 const randomBtn = document.querySelector(".random-btn");
 
 // display random item when DOM is loaded
-const randomItem = Math.floor(Math.random() * 5);
-console.log("this is: ", randomItem);
+//                  5    10
+function randomIdx(min, max, int=true) {
+    if (int) {
+        // Generate a random integer between min (inclusive) and max (exclusive)
+        return Math.floor(Math.random() * (max - min)) + min;
+    } else {
+        // Generate a random float between min (inclusive) and max (exclusive)
+        return Math.random() * (max - min) + min;
+      }
+    }
+    
 
+let currentItem = 0;
+
+window.addEventListener("DOMContentLoaded", () => {
+    showPerson();
+
+});
+
+function showPerson() {
+  const item = reviews[currentItem];
+  img.src = item.img;
+  author.textContent = item.name;
+  job.textContent = item.job;
+  info.textContent = item.text;
+};
+
+
+function checkRecords() {
+  if (currentItem >= reviews.length) {
+    currentItem = 0;
+  } else if (currentItem < 0) {
+    currentItem = reviews.length - 1;
+  }
+};
+
+nextBtn.addEventListener("click", () => {
+  currentItem++;
+  checkRecords();
+  showPerson();
+});
+
+prevBtn.addEventListener("click", () => {
+  currentItem--;
+  checkRecords();
+  showPerson();
+});
+
+randomBtn.addEventListener("click", () => {
+  currentItem = randomIdx(0, reviews.length);
+  showPerson();
+});
